@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seiya Watanabe | Portfolio</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./works.js" defer></script>
+    <script type="module" src="./game.js"></script>
+</head>
+
+<body>
+    <header>
+        <a class="site-title" href="#top">Seiya Watanabe</a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#works">Works</a>
+        </nav>
+        <!-- 月の形・クリックすると天気予報へ -->
+<a
+    id="moon-display"
+    href="https://tenki.jp/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="月の形を確認して天気予報を見る"
+>
+    <span id="moon-icon" aria-hidden="true">🌙</span>
+    <span id="moon-name">月の形</span>
+</a>
+    </header>
+
+    <main>
+<!-- トップ -->
+<section id="top">
+    <img
+        src="./メディア/私.jpg"
+        alt="渡邉晴也のプロフィール写真"
+        class="profile-image">
+
+    <div class="top-content">
+        <h1>
+            渡邉 晴也<br>
+            ポートフォリオ
+        </h1>
+</section>
+<!-- 自己紹介 -->
+<section id="about">
+    <h2>About</h2>
+
+    <p>
+        渡邉 晴也<br>
+        東京都市大学 デザイン・データ科学部
+    </p>
+
+    <p>
+        趣味：ゲーム、散歩、音楽を聴く<br>
+        特技：初見を楽しむ、短縄跳び
+    </p>
+</section>
+
+        <!-- 作品・趣味の一覧 -->
+        <section id="works">
+            <h2>Works</h2>
+
+            <div id="works-controls">
+                <select id="category" aria-label="カテゴリで絞り込む">
+                    <option value="all">すべてのカテゴリ</option>
+                </select>
+
+                <select id="sort" aria-label="並び順">
+                    <option value="new">新しい順</option>
+                    <option value="old">古い順</option>
+                    <option value="title">タイトル順</option>
+                </select>
+            </div>
+
+            <!-- works.js がCSVから一覧を作る -->
+            <div id="works-grid" aria-live="polite">
+                <p>作品を読み込んでいます...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- メールアドレス -->
+    <footer>
+        <h2>メールアドレス</h2>
+
+        <a href="mailto:g2546104@tcu.ac.jp">
+            g2546104@tcu.ac.jp
+        </a>
+    </footer>
+<!-- 右下のゲームボタン -->
+<div id="game-area">
+    <button
+        id="game-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="game-panel"
+        aria-label="ゲームを開く"
+    >
+        🎮
+    </button>
+
+    <div id="game-panel" hidden>
+        <div class="game-header">
+            <h2>🎮 ミニゲーム</h2>
+            <button id="game-close" type="button" aria-label="閉じる">×</button>
+        </div>
+
+        <div id="game-content">
+            <!-- game.js が画面を作成する -->
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
